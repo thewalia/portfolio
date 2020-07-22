@@ -1,0 +1,252 @@
+body, html{
+    font-size: 16px;
+    font-family: 'Lato',sans-serif;
+    line-height: 1.8em;
+    height: 100%;
+    margin: 0;
+    font-weight: 400;
+    scroll-behavior: smooth;
+    color: #666;
+}
+.pimg1, .pimg2, .pimg3, .pimg4{
+    position: relative;
+    opacity: 0.70;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+.pimg1{
+    background-image: url(images/books-business-computer-connection-459654.jpg);
+    min-height: 100%;
+}
+.pimg2{
+    background-image: url(images/person-writing-on-notebook-669615.jpg);
+    min-height: 100%;
+}
+.pimg3{
+    background-image: url(images/marketing-office-working-business-33999.jpg);
+    min-height: 100%;
+}
+.pimg4{
+    background-image: url(images/silhouette-of-man-247899.jpg);
+    min-height: 100%;
+}
+.section{
+    text-align: center;
+    padding: 50px 80px;
+}
+.section-light{
+    background-color: #f4f4f4;
+    color: #666;
+}
+.section-dark{
+    background-color: #282e34;
+    color: #ddd;
+}
+.section ul{
+    list-style: none;
+}
+.ptext{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    text-align: center;
+    color: #000;
+    font-size: 27px;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    line-height: 60px;
+}
+
+/* Navigation bar*/
+
+.navbar{
+    width: 100%; 
+    position: fixed;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    background-color: #fff;
+    z-index: 1;
+}
+.navlink{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    padding: 17px 0;
+}
+.navlink a{
+    text-decoration: none;
+    color: #282e34;
+    font-weight: 600;
+    padding: 21px 22px;
+}
+.navlink a:hover{
+    background-color: #282e34;
+    font-weight: 600;
+    color: #fff;
+}
+.nav-con{
+    display: flex;
+    list-style: none;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+}
+.nav-con a{
+    text-decoration: none;
+    color: #282e34;
+    font-weight: 500;
+    transition-property: background;
+    transition-duration: 1s;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+.nav-con a:hover{
+    background: #282e34;
+    font-weight: 500;
+    color: #fff;
+    padding: 20px 20px;
+}
+
+/*grid project*/
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+main{
+    display: grid;
+    grid-template-columns: 1fr repeat(12, minmax(auto,60px)) 1fr;
+    grid-gap: 40px;
+    padding: 60px 0;
+    background-color: #303032;
+
+}
+.text-medium{
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+    color: #ecf0f1;
+}
+.cards{
+    grid-column: 2/span 12;
+    display: grid;
+    grid-template-columns: repeat(12, minmax(auto,60px));
+    grid-gap: 40px;
+    margin: 58px 0;
+}
+.card{
+    grid-column-end: span 4;
+    display: flex;
+    flex-direction: column;
+    background-color: #39393b;
+    cursor: pointer;
+    transition: all 0.6s ease 0s;
+    opacity: 0.7;
+}
+.card:hover{
+    transform: translateY(-7px);
+    opacity: 1;
+}
+.card_image-container{
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    padding-top: 56.25%;
+}
+.card_image-container img{
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.card_content{
+    padding: 20px;
+}
+.card_title{
+    margin-bottom: 20px;
+}
+.card_info{
+    display: flex;
+    align-self: end;
+    align-items: center;
+}
+.card_price{
+    margin-left: auto;
+    padding: 5px 20px;
+    background-color: #303032;
+    border-radius: 20px;
+}
+
+/* Media Queries*/
+
+@media only screen and (max-width: 1000px){
+    .card{
+        grid-column-end: span 6;
+    }
+}
+@media only screen and (max-width: 700px){
+    .main{
+        grid-gap: 20px;
+    }
+    .card{
+        grid-column-end: span 12;
+    }
+}
+@media only screen and (max-width: 500px){
+    .main{
+        grid-template-columns: 10px repeat(6, 1fr) 10px;
+        grid-gap: 10px;
+    }
+    .cards{
+        grid-column: 2/span 6;
+        grid-template-columns: repeat(6, 1fr);
+        grid-gap: 20px;
+    }
+    .card{
+        grid-column-end: span 6;
+    }
+}
+@media(max-width:768px)
+{
+    .pimg1, .pimg2, .pimg3, .pimg4{
+        background-attachment: scroll;
+    }
+}
+/* Practice */
+.card_title::before{
+    content: '< ';
+    font-size: 21px;
+    opacity: 0;
+    color: #ff0099;
+    transition: opacity 0.3s ease-in 0s;
+}
+.card_title::after{
+    content: ' />';
+    font-size: 21px;
+    opacity: 0;
+    color: #ff0099;
+    transition: opacity 0.3s ease-in 0s;
+}
+.card_title:hover::before{
+    content: '< ';
+    font-size: 21px;
+    opacity: 1;
+    color: #ff0099;
+}
+.card_title:hover::after{
+    content: ' />';
+    font-size: 21px;
+    opacity: 1;
+    color: #ff0099;
+}
+a{
+    text-decoration: none;
+}
